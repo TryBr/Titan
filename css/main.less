@@ -89,6 +89,10 @@ textarea {
     box-shadow:     @x @y @blur @spread rgba(0, 0, 0, @alpha);
 }
 
+.drop-shadow-real {
+    .drop-shadow (1px, 2px, 2px, 0, 0.4);
+}
+
 /*=============================
 =            Шапка            =
 =============================*/
@@ -96,6 +100,7 @@ textarea {
 .header {
     background: url(../img/header-bg.jpg) repeat-x #9A9A9A center center;
     height: 168px;
+    margin-bottom: 20px;
 
     .logo-wrapper {
         margin-right: 20px;
@@ -196,9 +201,9 @@ textarea {
         float: left;
 
         .left-menu-wrapper {
-            background: #b7b7b7 no-repeat;
             position: relative;
             padding-bottom: 30px;
+            background: #b7b7b7 no-repeat;
             &:before {
                 content: "";
                 background: url("../img/left-sidebar-bg.png") no-repeat;
@@ -207,6 +212,7 @@ textarea {
                 position: absolute;
                 top: 120px;
                 opacity: 0.2;
+                z-index: 0;
             }
             &:after {
                 content: "";
@@ -218,7 +224,6 @@ textarea {
 
             }
             .title {
-                background: url(../img/left-sidebar-orange-title.png) #fff;
                 width: 220px;
                 height: 36px;
                 font-size: 16px;
@@ -228,6 +233,8 @@ textarea {
                 text-transform: uppercase;
                 font-weight: normal;
                 line-height: 2.2;
+                margin-top: 0;
+                background: url(../img/left-sidebar-orange-title.png) #fff;
             }
 
             .left-menu-list {
@@ -235,6 +242,8 @@ textarea {
                 margin: 0px;
                 list-style: none;
                 padding-left: 20px;
+                position: relative;
+                z-index: 1;
 
                 .left-menu__item {
                     padding-bottom: 5px;
@@ -364,13 +373,88 @@ textarea {
                 }
             }
         }
+
+        .contacts-wrapper {
+            padding-top: 20px;
+            .text {
+                color: #777777;
+                font-family: @tahoma;
+                font-size: 14px;  
+                line-height: 1.8; 
+            }
+
+            .yandex-map {
+                border-radius: 5px;
+                overflow: hidden;
+                display: block;
+                border: 3px solid #eaeaea;
+                .drop-shadow (1px, 2px, 2px, 0, 0.4);
+            }
+
+        }
     }
 
     .right-content-area {
         width: 700px;
         float: right;
-    }
+        /* Баннер */
+        .content-banner {
+            border-radius: 5px;
+            overflow: hidden;
+            .drop-shadow-real;
+            .banner__img {
 
+            }
+        }
+
+        /* Хлебные крошки и поиск */
+        .breadcrumbs-and-search {
+            margin-top: 10px;
+            .breadcrumbs {
+                float: left;
+                width: 480px;
+                line-height: 2.4;
+                .breadcrumbs-list {
+                    padding: 0px;
+                    margin: 0px;
+
+                    .breadcrumbs__item {
+                        display: inline-block;
+                        font-size: 14px;
+                        color: #777777;
+                        font-family: @tahoma;
+                        .breadcrumbs__link {
+                            color: #ef7d1a;
+                        }
+                    }
+                }
+            }
+            .search {
+                float: right;
+                width: 220px;
+                .search-field-wrapper {
+                    position: relative;
+                    &:before {
+                        content: "";
+                        background: url("../img/search-icon.png") no-repeat;
+                        width: 23px;
+                        height: 24px;
+                        position: absolute;
+                        left: 5px;
+                        top: 10px;
+                    }
+                    .search__field {
+                        width: 185px;
+                        height: 36px;
+                        border-radius: 5px;
+                        .drop-shadow-real;
+                        border: 1px solid #f3f3f3;
+                        padding-left: 35px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
