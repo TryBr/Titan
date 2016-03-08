@@ -703,9 +703,85 @@ textarea {
     }
 }
 
+/*=============================
+=            Футер            =
+=============================*/
+
+.footer {
+
+}
+
+/*=====  End of Футер  ======*/
 
 
+.footer {
+    background: url(../img/footer-bg.jpg) repeat-x #9A9A9A 110% 0%;
+    height: 216px;
 
+    .footer-logo {
+        width: 220px;
+        float: left;
+        margin-right: 20px;
+        padding-top: 24px;
+
+        .copyright {
+            padding-top: 60px;
+            color: #fff;
+            font-family: @tahoma;
+            font-size: 14px;
+        }
+    }
+
+    .footer-info {
+        float: left;
+        width: 700px;
+        /* Нижнее меню */
+        .bottom-menu {
+            margin-top: 20px;
+            .bottom___menu__list {
+                margin: 0px;
+                padding: 0px;
+
+                li {
+                    display: inline-block;
+                }
+
+                .menu__separator {
+                    color: @white;
+                    font-size: 15px;
+                    font-family: @tahoma;
+                    padding: 0 5px;
+                }
+
+                .bottom__menu__link {
+                    color: @white;
+                    font-size: 15px;
+                    font-family: @tahoma;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+
+        .info-block {
+            text-align: right;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .developer {
+            text-align: right;
+            padding-top: 60px;
+            font-size: 14px;
+            color: #fff;
+        }
+    }
+}
 
 
 
