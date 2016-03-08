@@ -779,13 +779,60 @@ textarea {
             padding-top: 60px;
             font-size: 14px;
             color: #fff;
+
+            a {
+               color: #fff;
+               text-decoration: none;
+
+               &:hover {
+                text-decoration: underline;
+               } 
+            }
         }
     }
 }
 
 
 
+/*==============================
+=            TO TOP            =
+==============================*/
 
+.cd-top {
+  display: block;
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  /* image replacement properties */
+  overflow: hidden;
+  white-space: nowrap;
+  background: url(../img/to-top.png) no-repeat;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+}
+.no-touch .cd-top:hover {
+  opacity: 1;
+}
+
+
+/*=====  End of TO TOP  ======*/
 
 
 /* ==========================================================================
